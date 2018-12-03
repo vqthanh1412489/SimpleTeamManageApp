@@ -53,5 +53,10 @@ projectRouter.get('/:idProject', (req, res) => {
     .then(project => res.send({ success: true, project }))
     .catch(err => res.send({ success: false, err }));
 });
+projectRouter.get('/', (req, res) => {
+    ProjectServie.getAllProjects()
+    .then(projects => res.send({ success: true, projects }))
+    .catch(err => res.send({ success: false, err }));
+});
 
 module.exports = { projectRouter };

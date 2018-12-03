@@ -63,6 +63,9 @@ class ProjectServie {
         if (!project) throw new Error('idProject not found');
         return project;
     }
+    static async getAllProjects(){
+        return await Project.find({});
+    }
 }
 
 module.exports = { ProjectServie };
