@@ -1,0 +1,17 @@
+{
+  "name": "SimpleTeamManageApp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/vqthanh1412489/SimpleTeamManageApp.git",
+  "author": "vqthanh1412489 <vqthanh1412489@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.14"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
