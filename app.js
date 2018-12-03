@@ -8,8 +8,9 @@ const app = express();
 
 require('./db');
 
+app.use(cors());
 app.use('/user', userRouter);
 app.use('/project', projectRouter);
-app.use(cors());
+
 
 module.exports = { app };
