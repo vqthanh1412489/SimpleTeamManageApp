@@ -66,6 +66,15 @@ class ProjectServie {
     static async getAllProjects(){
         return await Project.find({});
     }
+    static async getIdNameUsers(idProject){
+        const project = await Project.findById(idProject).populate('users');
+        if (!project) throw new Error('idProject not found');
+        const arrUsers = [];
+        project.users.forEach(element => {
+            arrUsers.push({ _id: element._id, name: element.name });
+        });
+        return arrUsers;
+    }
 }
 
 module.exports = { ProjectServie };

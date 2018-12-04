@@ -13,6 +13,7 @@
     "mongoose": "^5.3.14"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "NODE_ENV=production node index.js",
+    "server": "nodemon index.js"
   }
 }
