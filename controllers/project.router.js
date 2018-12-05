@@ -66,4 +66,11 @@ projectRouter.post('/getIdNameUsers', (req, res) => {
     .catch(err => res.send({ success: false, err }));
 });
 
+projectRouter.post('/getUserNotProject', (req, res) => {
+    const { idProject } = req.body;
+    ProjectServie.getUserNotProject(idProject)
+    .then(arrUsers => res.send({ success: true, arrUsers }))
+    .catch(err => res.send({ success: false, err }));
+});
+
 module.exports = { projectRouter };

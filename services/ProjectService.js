@@ -1,5 +1,6 @@
 const { Project } = require('../models/Project');
 const { User } = require('../models/User');
+var _ = require('lodash');
 
 class ProjectServie {
     static async add(name, des){
@@ -75,6 +76,23 @@ class ProjectServie {
         });
         return arrUsers;
     }
+    static async getUserNotProject(idProject){
+        const project = await Project.findById(idProject).populate('users');
+        if (!project) throw new Error('idProject not found');
+        const arrUsersOfProject = [];
+        project.users.forEach(element => {
+            arrUsersOfProject.push({_id: element._id.toString(), name: element.name.toString()});
+        });
+        const arr = [];
+        const users = await User.find({});
+        const arr1 = [];
+        users.forEach(element => {
+            arr1.push({_id: element._id.toString(), name: element.name.toString()});
+        });
+        
+        return _.differenceBy(arr1, arrUsersOfProject, '_id')
+    }
 }
 
 module.exports = { ProjectServie };
+
