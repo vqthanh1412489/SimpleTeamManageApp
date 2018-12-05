@@ -39,7 +39,10 @@ class ProjectServie {
         }, { new: true });
         
         if (!newUser) throw new Error('idUser not found');
-        return { newUser, newProject };
+        const user = await User.findById(idUser);
+        const inforUser = user.toObject();
+        delete inforUser.password;
+        return  inforUser;
     }
     static async deleteUserFromProject(idProject, idUser){
         const newProject = await Project.findByIdAndUpdate(idProject, {
@@ -56,7 +59,12 @@ class ProjectServie {
         }, { new: true });
         
         if (!newUser) throw new Error('idUser not found');
-        return { newUser, newProject };
+
+        const user = await User.findById(idUser);
+        const inforUser = user.toObject();
+        delete inforUser.password;
+
+        return inforUser;
     }
 
     static async showProjectDetail(idProject){
