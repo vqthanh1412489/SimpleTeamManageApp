@@ -1,4 +1,11 @@
 # SimpleTeamManageApp
+
+# WEB CLIENT DEMO
+# https://test3009cititech.000webhostapp.com/
+
+# SERVER HEROKU RETURN API
+# https://testpv3009.herokuapp.com/
+
 # API
   - Create new Member (SignIn, SignUp)
   - Create new Project
