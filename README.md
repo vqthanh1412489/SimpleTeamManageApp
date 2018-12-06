@@ -22,11 +22,11 @@
  - MongoDB (3.6.3)
  # Client
  - Angular
-  @angular-devkit/architect    0.11.0 (cli-only)
-  @angular-devkit/core         7.1.0 (cli-only)
-  @angular-devkit/schematics   7.1.0 (cli-only)
-  @schematics/angular          7.1.0 (cli-only)
-  @schematics/update           0.11.0 (cli-only)
+  + @angular-devkit/architect    0.11.0 (cli-only)
+  + @angular-devkit/core         7.1.0 (cli-only)
+  + @angular-devkit/schematics   7.1.0 (cli-only)
+  + @schematics/angular          7.1.0 (cli-only)
+  + @schematics/update           0.11.0 (cli-only)
   
   # UI layout
   - Bootstrap 4
