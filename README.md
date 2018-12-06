@@ -26,7 +26,7 @@
   - mocha
   - supertest
  # Database
- - MongoDB (3.6.3)
+ - MongoDB (3.6.3) (Deploy https://mlab.com/)
  # Client
  - Angular
   + @angular-devkit/architect    0.11.0 (cli-only)
