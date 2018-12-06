@@ -8,8 +8,8 @@ projectRouter.use(json());
 projectRouter.post('/', (req, res) => {
     const { name, des } = req.body;
     ProjectServie.add(name, des)
-    .then(project => res.send({ success: true, project }))
-    .catch(err => res.send({ success: false, err }));
+    .then(project => res.status(200).send({ success: true, project }))
+    .catch(err => res.status(404).send({ success: false, err }));
 });
 
 // projectRouter.delete('/:idProject', (req, res) => {
@@ -38,39 +38,39 @@ projectRouter.post('/', (req, res) => {
 projectRouter.put('/addUserToProject', (req, res) => {
     const { idProject, idUser } = req.body;
     ProjectServie.addUserToProject(idProject, idUser)
-    .then(data => res.send({ success: true, data }))
-    .catch(err => res.send({ success: false, err }));
+    .then(data => res.status(200).send({ success: true, data }))
+    .catch(err => res.status(404).send({ success: false, err }));
 });
 projectRouter.put('/deleteUserFromProject', (req, res) => {
     const { idProject, idUser } = req.body;
     ProjectServie.deleteUserFromProject(idProject, idUser)
-    .then(data => res.send({ success: true, data }))
-    .catch(err => res.send({ success: false, err }));
+    .then(data => res.status(200).send({ success: true, data }))
+    .catch(err => res.status(404).send({ success: false, err }));
 });
 projectRouter.get('/:idProject', (req, res) => {
     const { idProject } = req.params;
     ProjectServie.showProjectDetail(idProject)
-    .then(project => res.send({ success: true, project }))
-    .catch(err => res.send({ success: false, err }));
+    .then(project => res.status(200).send({ success: true, project }))
+    .catch(err => res.status(404).send({ success: false, err }));
 });
 projectRouter.get('/', (req, res) => {
     ProjectServie.getAllProjects()
-    .then(projects => res.send({ success: true, projects }))
-    .catch(err => res.send({ success: false, err }));
+    .then(projects => res.status(200).send({ success: true, projects }))
+    .catch(err => res.status(404).send({ success: false, err }));
 });
 
 projectRouter.post('/getIdNameUsers', (req, res) => {
     const { idProject } = req.body;
     ProjectServie.getIdNameUsers(idProject)
-    .then(arrUsers => res.send({ success: true, arrUsers }))
-    .catch(err => res.send({ success: false, err }));
+    .then(arrUsers => res.status(200).send({ success: true, arrUsers }))
+    .catch(err => res.status(404).send({ success: false, err }));
 });
 
 projectRouter.post('/getUserNotProject', (req, res) => {
     const { idProject } = req.body;
     ProjectServie.getUserNotProject(idProject)
-    .then(arrUsers => res.send({ success: true, arrUsers }))
-    .catch(err => res.send({ success: false, err }));
+    .then(arrUsers => res.status(200).send({ success: true, arrUsers }))
+    .catch(err => res.status(404).send({ success: false, err }));
 });
 
 module.exports = { projectRouter };
