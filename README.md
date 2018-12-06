@@ -9,7 +9,7 @@
   - Remove member from a project
   - Show project detail
 
-# Module (all new version)
+# Module (new version for all)
   - bcrypt
   - body-parser
   - cors
